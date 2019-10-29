@@ -1,0 +1,21 @@
+a:5:{i:0;s:1237:"Error in file: "/var/www/html/magento-mirror/app/code/core/Mage/Newsletter/sql/newsletter_setup/install-1.6.0.0.php" - SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'newsletter_subscriber' already exists, query was: CREATE TABLE `newsletter_subscriber` (
+  `subscriber_id` int UNSIGNED NOT NULL auto_increment COMMENT 'Subscriber Id' ,
+  `store_id` smallint UNSIGNED NULL default '0' COMMENT 'Store Id' ,
+  `change_status_at` timestamp NULL default NULL COMMENT 'Change Status At' ,
+  `customer_id` int UNSIGNED NOT NULL default '0' COMMENT 'Customer Id' ,
+  `subscriber_email` varchar(150) NULL default NULL COMMENT 'Subscriber Email' ,
+  `subscriber_status` int NOT NULL default '0' COMMENT 'Subscriber Status' ,
+  `subscriber_confirm_code` varchar(32) NULL default 'NULL' COMMENT 'Subscriber Confirm Code' ,
+  PRIMARY KEY (`subscriber_id`),
+  INDEX `IDX_NEWSLETTER_SUBSCRIBER_CUSTOMER_ID` (`customer_id`),
+  INDEX `IDX_NEWSLETTER_SUBSCRIBER_STORE_ID` (`store_id`),
+  CONSTRAINT `FK_NEWSLETTER_SUBSCRIBER_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
+) COMMENT='Newsletter Subscriber' ENGINE=INNODB charset=utf8 COLLATE=utf8_general_ci";i:1;s:984:"#0 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(644): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.6.0.2')
+#2 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.6.0.2')
+#3 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/App.php(444): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/App.php(370): Mage_Core_Model_App->_initModules()
+#6 /var/www/html/magento-mirror/app/Mage.php(686): Mage_Core_Model_App->run(Array)
+#7 /var/www/html/magento-mirror/index.php(83): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:16:"/magento-mirror/";s:11:"script_name";s:25:"/magento-mirror/index.php";s:4:"skin";s:7:"default";}

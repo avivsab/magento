@@ -1,0 +1,26 @@
+a:5:{i:0;s:1659:"Error in file: "/var/www/html/magento-mirror/app/code/core/Mage/SalesRule/sql/salesrule_setup/upgrade-1.6.0.0-1.6.0.1.php" - SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'coupon_aggregated_updated' already exists, query was: CREATE TABLE `coupon_aggregated_updated` (
+  `id` int UNSIGNED NOT NULL auto_increment COMMENT 'Id' ,
+  `period` date NOT NULL COMMENT 'Period' ,
+  `store_id` smallint UNSIGNED NULL COMMENT 'Store Id' ,
+  `order_status` varchar(50) NULL COMMENT 'Order Status' ,
+  `coupon_code` varchar(50) NULL COMMENT 'Coupon Code' ,
+  `coupon_uses` int NOT NULL default '0' COMMENT 'Coupon Uses' ,
+  `subtotal_amount` decimal(12,4) NOT NULL default '0.0000' COMMENT 'Subtotal Amount' ,
+  `discount_amount` decimal(12,4) NOT NULL default '0.0000' COMMENT 'Discount Amount' ,
+  `total_amount` decimal(12,4) NOT NULL default '0.0000' COMMENT 'Total Amount' ,
+  `subtotal_amount_actual` decimal(12,4) NOT NULL default '0.0000' COMMENT 'Subtotal Amount Actual' ,
+  `discount_amount_actual` decimal(12,4) NOT NULL default '0.0000' COMMENT 'Discount Amount Actual' ,
+  `total_amount_actual` decimal(12,4) NOT NULL default '0.0000' COMMENT 'Total Amount Actual' ,
+  PRIMARY KEY (`id`),
+  UNIQUE `UNQ_COUPON_AGGRED_UPDATED_PERIOD_STORE_ID_ORDER_STS_COUPON_CODE` (`period`, `store_id`, `order_status`, `coupon_code`),
+  INDEX `IDX_COUPON_AGGREGATED_UPDATED_STORE_ID` (`store_id`),
+  CONSTRAINT `FK_COUPON_AGGREGATED_UPDATED_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) COMMENT='Coupon Aggregated Updated' ENGINE=InnoDB charset=utf8 COLLATE=utf8_general_ci";i:1;s:1002:"#0 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(644): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(437): Mage_Core_Model_Resource_Setup->_modifyResourceDb('upgrade', '1.6.0.0', '1.6.0.3')
+#2 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(320): Mage_Core_Model_Resource_Setup->_upgradeResourceDb('1.6.0.0', '1.6.0.3')
+#3 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/App.php(444): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /var/www/html/magento-mirror/app/code/core/Mage/Core/Model/App.php(370): Mage_Core_Model_App->_initModules()
+#6 /var/www/html/magento-mirror/app/Mage.php(686): Mage_Core_Model_App->run(Array)
+#7 /var/www/html/magento-mirror/index.php(83): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:48:"/magento-mirror/index.php/install/wizard/locale/";s:11:"script_name";s:25:"/magento-mirror/index.php";s:4:"skin";s:7:"default";}
