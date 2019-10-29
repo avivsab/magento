@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Matrix_HelloWorld>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Matrix_HelloWorld>
+    </modules>
+</config>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Matrix_HelloWorld>
+            <version>
+                0.1.0
+            </version>
+        </Matrix_HelloWorld>
+    </modules>
+
+<!-- ... -->
+    <frontend>
+        <routers>
+            <!-- the <helloworld> tagname appears to be arbitrary, but by
+            convention is should match the frontName tag below-->
+            <helloworld>
+                <use>standard</use>
+                <args>
+                    <module>Matrix_HelloWorld</module>
+                    <frontName>helloworld</frontName>
+                </args>
+            </helloworld>
+        </routers>
+    </frontend>
+<!-- ... -->
+    <global>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <Matrix_HelloWorld_model_observer>
+                        <type>singleton</type>
+                        <class>Matrix_HelloWorld_Model_Observer</class>
+                        <method>checkForConfigRequest</method>
+                    </Matrix_HelloWorld_model_observer>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+</config>
