@@ -2,8 +2,10 @@
 class Matrix_HelloWorld_IndexController extends Mage_Core_Controller_Front_Action{
     public function indexAction(){
         echo "dddd";
-        Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles());
-
+       // Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles());
+//        echo '<hr>
+//          <p><u> coming from phtml template </u></p>
+//';
         $this->loadLayout();
         $this->renderLayout();
     }

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-<!--    <helloworld_index_index>-->
-<!--        <block type="core/template" name="root" output="toHtml" template="matrix/helloworld/simple_page.phtml" />-->
-<!--    </helloworld_index_index>-->
-
-
     <helloworld_index_index>
-        <default>
-             <block type="page/html" name="root" output="toHtml" template="matrix/helloworld/simple_page.phtml" />
-        </default>
-        <reference name="root">
-            <action method="setTemplate"><template>matrix/helloworld/simple_page.phtml</template></action>
-        </reference>
+        <block type="core/template" name="root" output="toHtml" template="matrix/helloworld/simple_page.phtml" />
     </helloworld_index_index>
+
+
+<!--    <helloworld_index_index>-->
+<!--        <default>-->
+<!--             <block type="page/html" name="root" output="toHtml" template="matrix/helloworld/simple_page.phtml" />-->
+<!--        </default>-->
+<!--        <reference name="root">-->
+<!--            <action method="setTemplate"><template>matrix/helloworld/simple_page.phtml</template></action>-->
+<!--        </reference>-->
+<!--    </helloworld_index_index>-->
 </layout>
