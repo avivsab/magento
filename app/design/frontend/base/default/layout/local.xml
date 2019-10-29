@@ -9,5 +9,8 @@
         <default>
              <block type="page/html" name="root" output="toHtml" template="matrix/helloworld/simple_page.phtml" />
         </default>
+        <reference name="root">
+            <action method="setTemplate"><template>matrix/helloworld/simple_page.phtml</template></action>
+        </reference>
     </helloworld_index_index>
 </layout>
